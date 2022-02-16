@@ -31,14 +31,22 @@
     display:block;
     width:  10px;
     height: 10px;
-    border:1px solid;
+
     box-sizing: border-box;
 }
 .clear-button
 {
     margin:0 40.2%;
 }
+.erase-button
+{
+    margin:0 40.2%;
+}
 #color-change 
 {
-    background-color: red !important;
+    background-color: red;
+}
+#color-erase
+{
+    background-color:white;
 }

@@ -2,20 +2,27 @@
 let mainContainer = document.createElement("div");
 let gridContainer = document.createElement("div");
 let clearBtn = document.createElement("button");
+let eraseBtn = document.createElement("button");
 document.body.appendChild(mainContainer);
 mainContainer.appendChild(gridContainer);
 mainContainer.appendChild(clearBtn);
+mainContainer.appendChild(eraseBtn);
 mainContainer.className = "container";
 gridContainer.className = "gridContainer";
 clearBtn.className = "clear-button";
 clearBtn.value = "Clear";
 clearBtn.textContent = "Clear";
+eraseBtn.className = "erase-button";
+eraseBtn.value = "Erase";
+eraseBtn.textContent = "Erase";
 
 
-
+//condition bool
+let running = true;
 //Loop to create the grid with element and function
 for(let i = 0 ; i < 16; i++)
 {
+    
     let columnItems = document.createElement("div");
     columnItems.className = "gridItems";
     gridContainer.appendChild(columnItems);
@@ -24,61 +31,39 @@ for(let i = 0 ; i < 16; i++)
         let rowItems = document.createElement("div");
         rowItems.className = "gridItems";
         gridContainer.appendChild(rowItems);
-
-        //Hover to see the color you're using
-        rowItems.addEventListener("mouseover",function(event)
-        {
-            event.target.style.backgroundColor = "red";
-        });
-        rowItems.addEventListener("mouseout",function(event)
-        {
-            event.target.style.backgroundColor = "white";
-        });
-
-
-        //Click to apply color
-        rowItems.addEventListener("mousedown",function(event)
-        {
-            event.target.id = "color-change";
-        });
-
         //click and move mouse
         rowItems.addEventListener("mousemove",function(event)
         {
             if(event.buttons == 1)
             {
-                event.target.id = "color-change";
+                event.target.style.backgroundColor = "red";
+
             }
         });
 
+        //Click to apply color
+        rowItems.addEventListener("mousedown",function(event)
+        {
+            event.target.style.backgroundColor = "red";
+        });
     }
-
-    //Hover to see the color you're using
-    columnItems.addEventListener("mouseover",function(event)
-    {
-        event.target.style.backgroundColor = "red";
-    });
-    columnItems.addEventListener("mouseout",function(event)
-    {
-        event.target.style.backgroundColor = "white";
-    });
-
-
-    //Click to apply color
-    columnItems.addEventListener("mousedown",function(event)
-    {
-        event.target.id = "color-change";
-    });
-
     //click and move mouse
     columnItems.addEventListener("mousemove",function(event)
     {
         if(event.buttons == 1)
         {
-            event.target.id = "color-change";
+            event.target.style.backgroundColor = "red";
         }
     });
+
+    //Click to apply color
+    columnItems.addEventListener("mousedown",function(event)
+    {
+        event.target.style.backgroundColor = "red";
+    });
+
 }
+
 
 //Clear Btn
 clearBtn.addEventListener("click" , function(event)
@@ -86,13 +71,28 @@ clearBtn.addEventListener("click" , function(event)
     let clearItems = document.getElementsByTagName("div");
     for(let i = 0 ; i < clearItems.length;i++)
     {
-        if(clearItems[i].id == "color-change")
-        {
-            clearItems[i].id = "";
-        }
-    }
-
-
-    
+        clearItems[i].style.backgroundColor = "";
+    } 
 });
+
+//Erase Btn
+eraseBtn.addEventListener("click",function(event)
+{
+    let gridDraw = document.getElementsByClassName("gridItems");
+    for(let i = 0 ; i < gridDraw.length;i++)
+    {
+        gridDraw[i].addEventListener("mousemove",function(event)
+        {
+            if(event.buttons == 1)
+            {
+                event.target.style.backgroundColor = "";
+            }
+        });
+        gridDraw[i].addEventListener("mousedown",function(event)
+        {
+            event.target.style.backgroundColor = "";
+        });
+    } 
+});
+//TODO transfer the whole draw color to grid into different loop
 
