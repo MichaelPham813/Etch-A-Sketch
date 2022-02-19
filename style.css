@@ -5,6 +5,11 @@
     padding:0;
     margin:0;
 }
+body
+{
+    background-color: #300350;
+    overflow:hidden;
+}
 
 .container
 {
@@ -16,17 +21,27 @@
     justify-content: center;
     margin:50px 320px;
     padding:0;
+    border-radius:25px;
+    box-shadow: 
+    0 0 60px 30px #F62E97,
+    0 0 100px 60px #E93479,
+    0 0 140px 90px #94167F;
 }
 .gridContainer
 {
     display:grid;
     border:5px solid;
     margin:10px;
-    grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr);
+    /* grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr); */
     align-items: center;
     justify-content: center;
-    padding:0;
+    border-radius:15px;
+    background-color: #94167F;
+    box-shadow: 
+    0 0 50px #94167F,
+    0 0 80px #F62E97;
+    
     
 }
 .gridItems
@@ -38,41 +53,344 @@
     user-select: none;
 }
 
-
 .itemsContainer
 {
     display:flex;
+    flex-direction: column;
+}
+.buttonContainer
+{
+    display:flex;
     flex-direction: row;
+    margin:20px;
+    height:120px;
     flex-wrap: wrap;
+    flex-grow:1 0 21%;
     align-items: center;
     justify-content: center;
-
+    gap:20px 0px;
 }
 
-.gridItems:hover
+.titleContainer
 {
-    background-color:red;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    top:-50px;
 }
+h3
+{
+    color:#F9AC53;
+    text-shadow:
+    0 0 7px #F9AC53,
+    0 0 10px #F9AC53,
+    0 0 21px #F9AC53,
+    0 0 42px #F9AC53,
+    0 0 82px #F9AC53,
+    0 0 92px #F9AC53,
+    0 0 102px #F9AC53,
+    0 0 151px #F9AC53;
+}
+
 .clear-button
 {
     margin:0 20px;
+    padding:5px;
+    width:50px;
+    height:50px;
+    border-radius: 100%;
+    font-weight: bolder;
+    text-align: center;
+    border: 0 transparent;
+    background-color: #E93479;
+    color:#F9AC53;
+    text-shadow:
+    0 0 7px #F9AC53,
+    0 0 10px #F9AC53,
+    0 0 21px #F9AC53,
+    0 0 42px #F9AC53,
+    0 0 82px #F9AC53,
+    0 0 92px #F9AC53,
+    0 0 102px #F9AC53,
+    0 0 151px #F9AC53;
+    box-shadow: 
+    0 0 50px #F9AC53,
+    0 0 80px #F62E97;
+
 }
 .erase-button
 {
     margin:0 20px;
+    padding:5px;
+    width:50px;
+    height:50px;
+    border-radius: 100%;
+    font-weight: bolder;
+    text-align: center;
+    border: 0 transparent;
+    background-color: #E93479;
+    color:#F9AC53;
+    text-shadow:
+    0 0 7px #F9AC53,
+    0 0 10px #F9AC53,
+    0 0 21px #F9AC53,
+    0 0 42px #F9AC53,
+    0 0 82px #F9AC53,
+    0 0 92px #F9AC53,
+    0 0 102px #F9AC53,
+    0 0 151px #F9AC53;
+    box-shadow: 
+    0 0 50px #F9AC53,
+    0 0 80px #F62E97;
 }
 .draw-button
 {
     margin:0 20px;
+    padding:5px;
+    width:50px;
+    height:50px;
+    border-radius: 100%;
+    border: 0 transparent;
+    font-weight: bolder;
+    text-align: center;
+    background-color: #E93479;
+    color:#F9AC53;
+    text-shadow:
+    0 0 7px #F9AC53,
+    0 0 10px #F9AC53,
+    0 0 21px #F9AC53,
+    0 0 42px #F9AC53,
+    0 0 82px #F9AC53,
+    0 0 92px #F9AC53,
+    0 0 102px #F9AC53,
+    0 0 151px #F9AC53;
+    box-shadow: 
+    0 0 50px #F9AC53,
+    0 0 80px #F62E97;
+}
+.color-picker
+{
+    margin:0 20px;
+    padding:5px;
+    width:50px;
+    height:50px;
+    border-radius: 100%;
+    border: 0 transparent;
+    overflow: hidden;
+    background-color: #E93479;
+    box-shadow: 
+    0 0 50px #F9AC53,
+    0 0 80px #F62E97;
 }
 
-button:active
+.random-button
 {
-    background-color: lightblue;
+    margin:0 20px;
+    padding:5px;
+    width:50px;
+    height:50px;
+    border-radius: 100%;
+    border: 0 transparent;
+    background-color: #E93479;
+    color:#F9AC53;
+    font-size:10px;
+    font-weight: bolder;
+    text-align: center;
+    text-shadow:
+    0 0 7px #F9AC53,
+    0 0 10px #F9AC53,
+    0 0 21px #F9AC53,
+    0 0 42px #F9AC53,
+    0 0 82px #F9AC53,
+    0 0 92px #F9AC53,
+    0 0 102px #F9AC53,
+    0 0 151px #F9AC53;
+    box-shadow: 
+    0 0 50px #F9AC53,
+    0 0 80px #F62E97;
 }
-button:focus
+.gray-scale
 {
-    background-color: red;
+    margin:0 20px;
+    padding:5px;
+    width:50px;
+    height:50px;
+    border-radius: 100%;
+    border: 0 transparent;
+    background-color: #E93479;
+    color:#F9AC53;
+    font-size:10px;
+    font-weight: bolder;
+    text-align: center;
+    text-shadow:
+    0 0 7px #F9AC53,
+    0 0 10px #F9AC53,
+    0 0 21px #F9AC53,
+    0 0 42px #F9AC53,
+    0 0 82px #F9AC53,
+    0 0 92px #F9AC53,
+    0 0 102px #F9AC53,
+    0 0 151px #F9AC53;
+    box-shadow: 
+    0 0 50px #F9AC53,
+    0 0 80px #F62E97;
+}
+
+input[type=color]::-webkit-color-swatch
+{
+    border:none;
+    border-radius:50%;
+    padding:0;
+}
+input[type=color]::-webkit-color-swatch-wrapper
+{
+    border:none;
+    border-radius:50%;
+    padding:0;
+}
+input[type=color]
+{
+    cursor:pointer;
+}
+
+#highlight
+{
+    background-color: #153CB4;
+}
+
+
+
+
+.clear-button:active,.erase-button:active,.draw-button:active
+{
+    background-color: #300350;
+    transition:ease-in-out 25ms linear 0.1s;
+}
+
+button
+{
+    background-color: #E93479;
+    transition:ease-out 0.1s linear 0.1s;
+}
+
+button:hover
+{
+    background-color: #153CB4;
+    transition:ease-in 0.1s linear 0.1s;
+    cursor: pointer;
+}
+
+.rangeContainer
+{
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+}
+.range-val
+{
+    color:#F9AC53;
+    font-weight:bolder;
+    text-shadow:
+    0 0 7px #F9AC53,
+    0 0 10px #F9AC53,
+    0 0 21px #F9AC53,
+    0 0 42px #F9AC53,
+    0 0 82px #F9AC53,
+    0 0 92px #F9AC53,
+    0 0 102px #F9AC53,
+    0 0 151px #F9AC53;
+}
+
+input[type = range]
+{
+    -webkit-appearance:none;
+    background: transparent;
+}
+
+input[type = range]::-webkit-slider-thumb
+{
+    -webkit-appearance:none;
+}
+
+input[type = range]:focus
+{
+    outline:none;
+}
+
+input[type = range]::-ms-track
+{
+    width: 100%;
+    cursor:pointer;
+
+    background:transparent;
+    border-color:transparent;
+    color:transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #000000;
+    height: 16px;
+    width: 16px;
+    border-radius: 10px;
+    background: #F9AC53;
+    cursor: pointer;
+    margin-top: -5px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+  }
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #F62E97;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+  }
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #F62E97;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+  }
+  input[type=range]::-ms-fill-lower {
+    background: #153CB4;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  input[type=range]:focus::-ms-fill-lower {
+    background: #153CB4;
+  }
+  input[type=range]::-ms-fill-upper {
+    background: #153CB4;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  input[type=range]:focus::-ms-fill-upper {
+    background: #153CB4;
+  }
+
+.range-slider
+{
+    border-radius:10px;
+    margin:0px 75px;
+}
+.rangeContainer
+{
+    position:relative;
+    top:65px;
 }
 
 /* #color-change 
@@ -83,3 +401,56 @@ button:focus
 {
     background-color:white;
 } */
+@media screen and (max-width:776px) {
+    .container
+    {
+        margin:50px 5px !important;
+    }
+}
+@media screen and (max-width:870px)
+{
+   .itemsContainer
+   {
+       height:100%;
+        width:300px;
+   }
+   .buttonContainer
+   {
+       height:300px;
+   }
+   .titleContainer
+   {
+       top:10px;
+   }
+   .rangeContainer
+   {
+       position:relative;
+       top:-20px;
+   }
+}
+
+@media screen and (max-width:1020px)
+{
+    .container
+    {
+        margin:50px 200px;
+    }
+
+}
+
+footer
+{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bolder;
+    color:#F9AC53;
+    text-shadow:
+    0 0 7px #F9AC53,
+    0 0 10px #F9AC53,
+    0 0 21px #F9AC53,
+    0 0 42px #F9AC53,
+    0 0 82px #F9AC53,
+    0 0 92px #F9AC53,
+    0 0 102px #F9AC53,
+    0 0 151px #F9AC53;
+}
